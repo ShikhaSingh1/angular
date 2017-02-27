@@ -1,0 +1,47 @@
+<div>
+	<div>
+		<div class="card">
+			<img ng-src="{{ filePath }}" >
+			<div class="card-block">
+				<a href="" style="color: black;" ng-click="openExplorer()">
+					<icon class="glyphicon glyphicon-camera">Upload Picture</icon>
+				</a>
+			</div>
+		</div>
+
+		<div class="card-columns profilePicDiv">
+			<div class="card">
+				<div class="card-block">
+					<img ng-src="{{ filePath }}">
+					<span id="uploadProfPic">
+						<a href="" class="updatePicLayover" style="color: black;" ng-click="openExplorer()">
+							<icon class="glyphicon glyphicon-camera" style="object-fit: contain"> Upload Profile Picture</icon>
+						</a>
+					</span>
+					<div><h4 class="card-title" style="text-align: center;">Name</h4></div>
+				</div>
+			</div>
+		</div>
+		
+		<input type="file" id="uploadPicture" style="display: none;">
+
+		<!--The jquery datepicker does not work with the angular elements like ng-model. So we have two ways to bind the data.
+			For that either we create a new directive(model-Bind-Dir) & pass the data to be bound on OR we bind to the datePicker change event
+			& put explicitely the datepicker selected value to the model variable & trigger the digest cycle
+		 -->
+		<label style="text-align: center">
+			Birthdate : 
+			<input type="text" id="myDatepicker"  ng-model="myDate">
+			Hi {{myDate}}
+		</label>
+		<hello-world></hello-world>
+	</div>
+
+	<div class="image-holder">
+		<img class="profilePicture" src="">
+		<div class="layover">
+			<p>Update Profile Picture </p>
+		</div>
+	</div>
+
+</div>

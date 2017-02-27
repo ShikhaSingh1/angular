@@ -1,0 +1,24 @@
+<div id="userDetails" flex="150" layout="row" layout-sm="column" layout-wrap>
+	<div ng-repeat="profile in userProfiles | filter:searchKey">   	 
+		<md-card>
+			<md-card-title>
+				<md-card-title-text>
+					<span class="md-headline">User profile</span>
+					<span class="md-subhead">{{profile.id}}</span>
+				</md-card-title-text>
+				<md-card-title-media>
+					<div class="md-media-lg card-media">
+						<img src="{{profile.avatar_url}}">
+					</div>
+				</md-card-title-media>
+			</md-card-title>
+			<md-card-content>
+				<label>{{profile.avatar_url}}</label>
+			</md-card-content>
+			<md-card-actions layout="row" layout-align="end center">
+				<md-button ng-click="showUserContact(profile)">Contact</md-button>
+				<md-button>Admin</md-button>
+			</md-card-actions>
+		</md-card>
+	</div>     
+</div>

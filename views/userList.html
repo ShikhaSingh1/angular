@@ -1,0 +1,23 @@
+<div>
+	<div class="navbar navbar-collapse">
+		<ul>
+			<li>
+				<a href="#">Your Dashboard</a>
+				<a href="#" ng-click="openContact()">Contact Us</a>
+			</li>
+		</ul>
+	</div>
+	<div>
+		<ui-view></ui-view>
+	</div>
+	<md-content>
+		<div id="search" style="text-align: center;">
+			<input type="text" name="searchUser" ng-model="searchKey" placeholder="type to search"/>
+			<button>
+				<i class="material-icons">search</i>
+			</button>
+		</div>
+
+		<user-list user-profiles="userProfiles" search-key="searchKey"></user-list>
+	</md-content>
+</div>	
